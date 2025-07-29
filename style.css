@@ -1,0 +1,34 @@
+@font-face {
+  font-family: "RedHatText";
+  src: url("/assets/fonts/static/RedHatText-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+    font-family: "RedHatText";
+    src: url("/assets/fonts/static/RedHatText-SemiBold.ttf");
+    font-weight: 600;
+} 
+
+@font-face {
+    font-family: "RedHatText";
+    src: url("/assets/fonts/static/RedHatText-Bold.ttf");
+    font-weight: 700;
+}   
+
+body {
+    background-color:hsl(13, 31%, 94%);
+    font-family: "RedHatText", sans-serif;
+}
+
+main h2 {
+    color: hsl(14, 65%, 9%);
+}
+
+aside {
+    background-color: hsl(20, 50%, 98%);
+}
+
+aside h3 {
+    color: hsl(14, 86%, 42%);
+}

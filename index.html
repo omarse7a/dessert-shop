@@ -2,73 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="import" href="component.html">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="load_data.js"></script>
   
   <title>Frontend Mentor | Product list with cart</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-
-  Desserts
-
-  Waffle with Berries
-  Waffle
-  6.50
-  Add to Cart
-
-  Vanilla Bean Crème Brûlée
-  Crème Brûlée
-  7.00
-  Add to Cart
-
-  Macaron Mix of Five
-  Macaron
-  8.00
-  Add to Cart
-
-  Classic Tiramisu
-  Tiramisu
-  5.50
-  Add to Cart
-
-  Pistachio Baklava
-  Baklava
-  4.00
-  Add to Cart
-
-  Lemon Meringue Pie
-  Pie
-  5.00
-  Add to Cart
-
-  Red Velvet Cake
-  Cake
-  4.50
-  Add to Cart
-
-  Salted Caramel Brownie
-  Brownie
-  4.50
-  Add to Cart
-
-  Vanilla Panna Cotta
-  Panna Cotta
-  6.50
-  Add to Cart
-
-  Your Cart (<!-- Quantity -->)
-  Your added items will appear here
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div class="p-6 flex flex-col space-y-6 sm:p-16 sm:flex-row sm:space-y-0 sm:space-x-[5%]">
+    <main class="w-full sm:w-[65%]">
+      <h2 class="text-3xl font-bold">Desserts</h2>
+      <div id="product-list">
+          <!-- Products will be added from js -->
+      </div>
+    </main>
+    <aside class="p-5 w-full sm:w-[30%] rounded-md">
+      <h3 class="text-xl font-bold">
+        Your Cart (<span id="item-count">0</span>)
+      </h3>
+      <div id="cart">
+          <!-- Cart contents will be added from js -->
+      </div>
+    </aside>
   </div>
 </body>
 </html>
+
+
+<!-- 
+      <div class="product">
+        <img src="" alt="Dessert 1">
+        <button>Add to Cart</button>
+        <p class="product-category">Waffle</p>
+        <p class="product-name">Waffle with Berries</p>
+        <p class="product-price">$6.50</p>
+      </div>
+    
+      <ol id="cart-items">
+           Cart items will be added from js
+      </ol>
+      <div class="flex justify-between">
+          <p>Order Total</p>
+          <strong id="total">$45.20</strong>
+      </div>
+      <div class="flex">
+        <img src="assets/images/icon-carbon-neutral.svg" alt="carbon-neutral">
+        <span>This is a <strong>carbon-neutral</strong> delivery</span>
+      </div>
+      <button type="submit">Confirm Order</button>
+-->
