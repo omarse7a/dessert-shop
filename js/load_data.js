@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <button 
                   id="add-${id}" 
                   class="absolute w-[50%] px-3 py-3 left-1/2 transform -translate-x-1/2 -translate-y-6 border border-[hsl(12,20%,44%)] 
-                  bg-[hsl(20,50%,98%)] rounded-full cursor-pointer hover:text-[hsl(20,50%,98%)] hover:bg-[hsl(14,86%,42%)] transition"
+                  bg-[hsl(20,50%,98%)] rounded-full cursor-pointer hover:text-[hsl(20,50%,98%)] hover:bg-[hsl(14,25%,72%)] transition"
                   >
                   <div class="flex gap-2 justify-center">
                     <img src="assets/images/icon-add-to-cart.svg" alt="cart-icon">
