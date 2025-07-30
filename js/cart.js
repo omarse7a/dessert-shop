@@ -9,7 +9,7 @@ function renderCart() {
         html = `
         <div class="flex flex-col items-center mt-6 mb-6">
           <img src="assets/images/illustration-empty-cart.svg" alt="empty-cart">
-          <p class="empty-msg">Your added items will appear here</p>
+          <p class="text-[hsl(12,20%,44%)]">Your added items will appear here</p>
         </div>
         `
     }
@@ -21,7 +21,7 @@ function renderCart() {
             <div class="mb-5 relative">
                 <p class="font-semibold mb-2">${item.name}</p>
                 <div class="flex space-x-2 text-sm">
-                    <p class="font-bold quantity">${item.quantity}x</p>
+                    <p class="font-bold text-[hsl(14,86%,42%)]">${item.quantity}x</p>
                     <p>@ $${item.price.toFixed(2)}</p>
                     <p class=" font-semibold">$${(item.price * item.quantity).toFixed(2)}</p>
                 </div>
@@ -29,7 +29,7 @@ function renderCart() {
                     <img src="assets/images/icon-remove-item.svg" alt="remove button" class="w-4 h-4 opacity-60 hover:opacity-100">
                 </button>
             </div>
-            <hr class="mb-5">
+            <hr class="mb-5 text-[hsl(13,31%,94%)]">
             `
         })
         html += `

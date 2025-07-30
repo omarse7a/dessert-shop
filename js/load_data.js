@@ -26,16 +26,20 @@ document.addEventListener('DOMContentLoaded', async () => {
             <div class="product">
               <div class="relative mb-8">
                 <img class="w-full h-auto object-cover rounded-2xl" src="${product.image.desktop}" alt="${product.name}">
-                <button id="add-${id}" class="absolute w-[50%] px-3 py-3 left-1/2 transform -translate-x-1/2 -translate-y-6 border rounded-full">
+                <button 
+                  id="add-${id}" 
+                  class="absolute w-[50%] px-3 py-3 left-1/2 transform -translate-x-1/2 -translate-y-6 border border-[hsl(12,20%,44%)] 
+                  bg-[hsl(20,50%,98%)] rounded-full cursor-pointer hover:text-[hsl(20,50%,98%)] hover:bg-[hsl(14,86%,42%)] transition"
+                  >
                   <div class="flex gap-2 justify-center">
                     <img src="assets/images/icon-add-to-cart.svg" alt="cart-icon">
                     <p class="font-semibold text-sm">Add to Cart</p>
                   </div>
                 </button>
               </div>
-              <p class="category">${product.category}</p>
+              <p class="text-[hsl(12,20%,44%)]">${product.category}</p>
               <p class="font-semibold">${product.name}</p>
-              <p class="price font-semibold">\$${product.price.toFixed(2)}</p>
+              <p class="price font-semibold text-[hsl(14,86%,42%)]">\$${product.price.toFixed(2)}</p>
         </div>
         `
         productList.insertAdjacentHTML('beforeend', html);
