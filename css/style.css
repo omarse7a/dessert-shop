@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "RedHatText";
+  src: url("../assets/fonts/static/RedHatText-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+    font-family: "RedHatText";
+    src: url("../assets/fonts/static/RedHatText-SemiBold.ttf");
+    font-weight: 600;
+} 
+
+@font-face {
+    font-family: "RedHatText";
+    src: url("../assets/fonts/static/RedHatText-Bold.ttf");
+    font-weight: 700;
+}   
+
+body {
+    background-color:hsl(13, 31%, 94%);
+    font-family: "RedHatText", sans-serif;
+}
+
+main {
+    color: hsl(14, 65%, 9%);
+}
+
+#product-list .product button {
+    background-color:hsl(20, 50%, 98%);
+    border-color: hsl(14, 86%, 42%);
+    cursor: pointer;
+}
+
+#product-list .product button:hover {
+    background-color: hsl(14, 86%, 42%);
+    color: hsl(13, 31%, 94%);
+    transition: ease-in 0.25s;
+}
+
+#product-list .product .category {
+    color: hsl(12, 20%, 44%);
+}
+
+#product-list .product .price {
+    color: hsl(14, 86%, 42%);
+}
+
+
+aside {
+    background-color: hsl(20, 50%, 98%);
+}
+
+aside h3 {
+    color: hsl(14, 86%, 42%);
+}

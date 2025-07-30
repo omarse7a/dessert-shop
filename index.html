@@ -6,23 +6,23 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="import" href="component.html">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <script src="load_data.js"></script>
+  <script src="js/load_data.js"></script>
   
   <title>Frontend Mentor | Product list with cart</title>
 
 </head>
 <body>
-  <div class="p-6 flex flex-col space-y-6 sm:p-16 sm:flex-row sm:space-y-0 sm:space-x-[5%]">
-    <main class="w-full sm:w-[65%]">
-      <h2 class="text-3xl font-bold">Desserts</h2>
-      <div id="product-list">
+  <div class="p-6 flex flex-col space-y-6 sm:p-20 sm:flex-row sm:space-y-0 sm:space-x-[5%]">
+    <main class="w-full sm:w-[60%]">
+      <h2 class="text-4xl font-bold mb-5">Desserts</h2>
+      <div id="product-list" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
           <!-- Products will be added from js -->
       </div>
     </main>
-    <aside class="p-5 w-full sm:w-[30%] rounded-md">
+    <aside class="p-5 w-full sm:w-[35%] rounded-2xl">
       <h3 class="text-xl font-bold">
         Your Cart (<span id="item-count">0</span>)
       </h3>
@@ -36,13 +36,20 @@
 
 
 <!-- 
-      <div class="product">
-        <img src="" alt="Dessert 1">
-        <button>Add to Cart</button>
-        <p class="product-category">Waffle</p>
-        <p class="product-name">Waffle with Berries</p>
-        <p class="product-price">$6.50</p>
-      </div>
+          <div class="product">
+              <div class="relative mb-8">
+                <img class="w-full h-auto object-cover" src="./assets/images/image-waffle-desktop.jpg" alt="Waffle with Berries">
+                <button id="add-btn" class="absolute px-4 py-2 left-1/2 transform -translate-x-1/2 -translate-y-4 bg-white border rounded-3xl text-md sm:text-sm">
+                  <div class="flex">
+                    <img src="assets/images/icon-add-to-cart.svg" alt="cart-icon">
+                    <p>Add to Cart</p>
+                  </div>
+                </button>
+              </div>
+              <p class="category">Waffle</p>
+              <p class="font-semibold">Waffle with Berries</p>
+              <p class="price font-semibold">$7.50</p>
+        </div>
     
       <ol id="cart-items">
            Cart items will be added from js
