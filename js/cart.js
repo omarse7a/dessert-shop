@@ -31,7 +31,6 @@ function renderCart() {
             </div>
             <hr class="mb-5">
             `
-            //document.getElementById(`rm-${item.id}`).addEventListener('click', () => removeFromCart(item.id))
         })
         html += `
         <div class="flex justify-between mb-5">
@@ -44,7 +43,7 @@ function renderCart() {
             <span>This is a <strong class="font-semibold">carbon-neutral</strong> delivery</span>
         </div>
 
-        <button type="submit" class="w-full py-3 text-[hsl(20,50%,98%)] bg-[hsl(14,86%,42%)] font-semibold rounded-full cursor-pointer">
+        <button id="confirm" class="w-full py-3 text-[hsl(20,50%,98%)] bg-[hsl(14,86%,42%)] font-semibold rounded-full cursor-pointer">
             Confirm Order
         </button>
         `
@@ -58,6 +57,7 @@ function renderCart() {
         if (btn) {
             btn.addEventListener('click', () => removeFromCart(item.id))
         }
+    document.getElementById("confirm").addEventListener('click', confirmOrder)
     })
 }
 
@@ -73,8 +73,40 @@ export function addToCart({id, name, price}) {
 }
 
 function removeFromCart(id) {
-    console.log("removed product fronm cart:")
+    console.log("removed product from cart:")
     cartItems = cartItems.filter(item => item.id != id)
+    renderCart()
+}
+
+function confirmOrder() {
+    const total = cartItems.reduce((sum, item) => sum + item.quantity * item.price, 0)
+    const checkout = document.getElementById("checkout")
+    let html = ''
+    cartItems.forEach(item => {
+        html = ` 
+            <p class="font-semibold mb-2">${item.name}</p>
+            <div class="flex space-x-2 text-sm">
+                <p class="font-bold text-[hsl(14,86%,42%)]">${item.quantity}x</p>
+                <p>@ $${item.price.toFixed(2)}</p>
+                <p class="ml-auto font-semibold">$${(item.price * item.quantity).toFixed(2)}</p>
+            </div>
+        `
+        checkout.insertAdjacentHTML('beforeend', html)
+    })
+    html = `
+        <div class="flex justify-between mt-4 pt-4">
+            <p class="font-semibold">Order Total</p>
+            <strong id="cart-total" class="text-2xl font-bold">$${total.toFixed(2)}</strong>
+        </div>
+    `
+    checkout.insertAdjacentHTML('beforeend', html)
+    document.getElementById("modal").classList.remove("hidden")
+    document.getElementById("new-order").addEventListener('click', newOrder)
+}
+
+function newOrder() {
+    document.getElementById("modal").classList.add("hidden")
+    cartItems = []
     renderCart()
 }
 

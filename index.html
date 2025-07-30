@@ -18,7 +18,7 @@
     <main class="w-full sm:w-[50%] lg:w-[70%]">
       <h2 class="text-5xl font-bold mb-5">Desserts</h2>
       <div id="product-list" class="grid lg:grid-cols-2 xl:grid-cols-3 gap-6">
-          <!-- Products will be added from js -->
+
       </div>
     </main>
     <aside class="self-start p-8 w-full sm:w-[45%] lg:w-[25%] rounded-2xl">
@@ -29,6 +29,20 @@
         
       </div>
     </aside>
+  </div>
+  <div id="modal" class="fixed inset-0 flex items-center justify-center bg-black/50 hidden">
+    <!-- Modal Box -->
+   <div class="bg-[hsl(20,50%,98%)] p-10 rounded-lg w-full sm:w-[60%] lg:w-[30%]">
+            <img src="assets/images/icon-order-confirmed.svg" alt="comfirmed">
+            <h2 class="text-4xl font-bold mt-5 mb-3">Order Confirmed</h2>
+            <p class="mb-5 text-[hsl(12,20%,44%)]">We hope you enjoy your food!</p>
+            <div id="checkout" class="p-3 mb-8 bg-[hsl(13,31%,94%)] rounded-lg">
+         
+            </div>
+            <button id="new-order" class="w-full py-3 text-[hsl(20,50%,98%)] bg-[hsl(14,86%,42%)] font-semibold rounded-full cursor-pointer">
+                Start New Order
+            </button>
+        </div>
   </div>
   <script type="module" src="js/load_data.js"></script>
   <script type="module" src="js/cart.js"></script>

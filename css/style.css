@@ -17,7 +17,7 @@
 }   
 
 body {
-    background-color:hsl(13, 31%, 94%);
+    background-color:hsl(13,31%,94%);
     font-family: "RedHatText", sans-serif;
 }
 
@@ -26,7 +26,7 @@ main {
 }
 
 #product-list .product button {
-    background-color:hsl(20, 50%, 98%);
+    background-color:hsl(20,50%,98%);
     border-color: hsl(14, 86%, 42%);
     cursor: pointer;
 }
