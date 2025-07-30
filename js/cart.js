@@ -43,7 +43,7 @@ function renderCart() {
             <span>This is a <strong class="font-semibold">carbon-neutral</strong> delivery</span>
         </div>
 
-        <button id="confirm" class="w-full py-3 text-[hsl(20,50%,98%)] bg-[hsl(14,86%,42%)] font-semibold rounded-full cursor-pointer">
+        <button id="confirm" class="w-full py-3 text-[hsl(20,50%,98%)] bg-[hsl(14,86%,42%)] font-semibold rounded-full cursor-pointer hover:bg-[hsl(14,89%,33%)] transition">
             Confirm Order
         </button>
         `
