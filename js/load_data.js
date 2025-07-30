@@ -1,3 +1,5 @@
+import { addToCart } from './cart.js'
+
 async function loadData() {
     try {
         const response = await fetch('../data.json')
@@ -5,7 +7,6 @@ async function loadData() {
             throw new Error('Failed to fetch the data')
         }
         const data = await response.json()
-        console.log(data)
         return data
     }
     catch(e) {
@@ -14,20 +15,21 @@ async function loadData() {
  
 }
 
-
 document.addEventListener('DOMContentLoaded', async () => {
     const productList = document.getElementById("product-list")
     const data = await loadData()
     if(data) {
-        data.forEach(product => {
+      let id = 0
+      data.forEach(product => {
+        const currentId = id
         const html = `
-           <div class="product">
+            <div class="product">
               <div class="relative mb-8">
                 <img class="w-full h-auto object-cover rounded-2xl" src="${product.image.desktop}" alt="${product.name}">
-                <button id="add-btn" class="absolute px-4 py-2 left-1/2 transform -translate-x-1/2 -translate-y-4 border rounded-2xl text-md sm:text-sm">
-                  <div class="flex">
+                <button id="add-${id}" class="absolute w-[50%] px-3 py-3 left-1/2 transform -translate-x-1/2 -translate-y-6 border rounded-full">
+                  <div class="flex gap-2 justify-center">
                     <img src="assets/images/icon-add-to-cart.svg" alt="cart-icon">
-                    <p>Add to Cart</p>
+                    <p class="font-semibold text-sm">Add to Cart</p>
                   </div>
                 </button>
               </div>
@@ -37,8 +39,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         </div>
         `
         productList.insertAdjacentHTML('beforeend', html);
+
+        document.getElementById(`add-${id}`).addEventListener('click', () => {
+          addToCart({...product, id: currentId})
         })
-    } 
+        id++
+      })
+    }
 })
 
     

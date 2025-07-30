@@ -50,6 +50,14 @@ aside {
     background-color: hsl(20, 50%, 98%);
 }
 
-aside h3 {
+aside h3, aside .quantity {
     color: hsl(14, 86%, 42%);
+}
+
+aside .empty-msg {
+    color: hsl(12, 20%, 44%);;
+}
+
+hr {
+    color: hsl(13, 31%, 94%);
 }
