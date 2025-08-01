@@ -2,7 +2,7 @@ import { addToCart, decrementItem } from './cart.js'
 
 async function loadData() {
     try {
-        const response = await fetch('../data.json')
+        const response = await fetch('./data.json');
         if(!response.ok) {
             throw new Error('Failed to fetch the data')
         }
