@@ -1,3 +1,5 @@
+import { updateProduct } from "./load_data.js"
+
 let cartItems = []
 
 function renderCart() {
@@ -61,27 +63,42 @@ function renderCart() {
     })
 }
 
-export function addToCart({id, name, price}) {
-    const existingItem = cartItems.find(item => item.name === name)
-    if(existingItem) {
-        existingItem.quantity++
-    }
-    else {
-        cartItems.push({id, name, price, quantity: 1})
+export function addToCart(product) {
+    const existingItem = cartItems.find(item => item.id === product.id)
+    product.quantity++
+    if(!existingItem) {
+        cartItems.push(product)
     }
     renderCart()
+    return product
+}
+
+export function decrementItem(id) {
+    const existingItem = cartItems.find(item => item.id === id)
+    if(existingItem.quantity > 1) {
+        existingItem.quantity--
+    }
+    else {
+        removeFromCart(id)
+    }
+    renderCart()
+    return existingItem
 }
 
 function removeFromCart(id) {
-    console.log("removed product from cart:")
-    cartItems = cartItems.filter(item => item.id != id)
+   const existingItem = cartItems.find(item => item.id === id)
+    if (!existingItem) return
+    existingItem.quantity = 0
+    cartItems = cartItems.filter(item => item.id !== id)
     renderCart()
+    updateProduct(id)
 }
 
 function confirmOrder() {
     const total = cartItems.reduce((sum, item) => sum + item.quantity * item.price, 0)
     const checkout = document.getElementById("checkout")
     let html = ''
+    checkout.innerHTML = html
     cartItems.forEach(item => {
         html = ` 
             <p class="font-semibold mb-2">${item.name}</p>
@@ -106,6 +123,10 @@ function confirmOrder() {
 
 function newOrder() {
     document.getElementById("modal").classList.add("hidden")
+    cartItems.forEach(product => {
+        product.quantity = 0
+        updateProduct(product.id)
+    })
     cartItems = []
     renderCart()
 }
